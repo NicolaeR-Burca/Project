@@ -4,8 +4,8 @@ import './Card.css';
 function Card({ client }) {
   return (
 
-    <div class="container">
-      <div class="card">
+    <div className="container">
+      <div className="card">
         <h3>First name: {client.first_name} Last name: {client.last_name}</h3>
         <p>State: {client.state} City: {client.city} </p>
         <p>Street: {client.street} {client.street_number}</p>

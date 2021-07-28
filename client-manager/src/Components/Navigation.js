@@ -17,7 +17,7 @@ export default class Navigation extends Component {
         return (
             <Router>
                 <div>
-                    <Navbar bg="dark" variant={"dark"} expand="lg" fixed="top">
+                    <Navbar bg="dark" variant={"dark"} expand="lg" sticky="top">
 
                         <Navbar.Brand >My Client Manager</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
