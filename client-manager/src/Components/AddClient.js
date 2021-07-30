@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
+import FormSignup from './FormSignup';
+import FormSuccess from './FormSuccess';
 
+const Form = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-export default function AddClient(props) {
-    return (
-        <div >
-            <h1>Testing Add Client</h1>
+  function submitForm() {
+    setIsSubmitted(true);
+  }
+  return (
+    <>
+      <div className='form-container'>
+       
+        <div className='form-content-left'>
+         
         </div>
-    )
+        {!isSubmitted ? (
+          <FormSignup submitForm={submitForm} />
+        ) : (
+          <FormSuccess />
+        )}
+      </div>
+    </>
+  );
+};
 
-}
+export default Form;
