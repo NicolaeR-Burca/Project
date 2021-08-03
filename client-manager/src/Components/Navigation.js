@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Firebase from "./Firebase";
 import { Navbar, Nav } from "react-bootstrap";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import SearchClient2 from "./SearchClient2";
+import SearchClient from "./SearchClient";
 import Home from "./Home";
 import AddClient from "./AddClient";
 import Statistics from "./Statistics";
@@ -57,7 +57,7 @@ const Navigation = () => {
       <div>
         <Switch>
           <Route path="/searchClient">
-            <SearchClient2 clients={clients} isLoading={isLoading} />
+            <SearchClient clients={clients} isLoading={isLoading} />
           </Route>
           <Route path="/addClient">
             <AddClient />

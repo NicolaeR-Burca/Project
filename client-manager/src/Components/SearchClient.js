@@ -41,7 +41,7 @@ function Search({ clients, isLoading }) {
         <Scroll>
           <ul>
             {filteredClients.map((client) => (
-              <SearchCard client={client} />
+              <SearchCard client={client} clients={clients} />
             ))}
           </ul>
         </Scroll>
