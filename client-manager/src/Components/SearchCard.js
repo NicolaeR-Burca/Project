@@ -3,6 +3,16 @@ import "./SearchCard.css";
 import Firebase from "./Firebase";
 
 function SearchCard({ client, clients }) {
+  const DeleteTransaction = () => {
+    const db = Firebase.firestore();
+    const increment = Firebase.firestore.FieldValue.increment(1);
+
+    // Document reference
+    const statsRef = db.collection("statistics").doc("numbers");
+
+    // Update read count
+    statsRef.update({ deleted: increment });
+  };
   const DeleteClient = () => {
     for (let person of clients) {
       if (person.cnp === client.cnp) {
@@ -16,8 +26,13 @@ function SearchCard({ client, clients }) {
           .catch((error) => {
             console.error("Error removing document: ", error);
           });
+        DeleteTransaction();
       }
     }
+  };
+
+  const EditClient = () => {
+    return client.name;
   };
   return (
     <div className="container">
@@ -34,7 +49,8 @@ function SearchCard({ client, clients }) {
         <p>Social Security Number: {client.cnp}</p>
         <p>Phone: {client.phone}</p>
         <p>License Plate: {client.car_number}</p>
-        <button onClick={DeleteClient}>Delete </button>
+        <button onClick={DeleteClient}>Delete </button>{" "}
+        <button onClick={EditClient}>Edit </button>
       </div>
     </div>
   );
