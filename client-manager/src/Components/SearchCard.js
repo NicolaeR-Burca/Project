@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SearchCard.css";
 import Firebase from "./Firebase";
+import EditForm from "./EditForm";
 
 function SearchCard({ client, clients }) {
+  const [isEditing, setIsEditing] = useState(false);
+
   const DeleteTransaction = () => {
     const db = Firebase.firestore();
     const increment = Firebase.firestore.FieldValue.increment(1);
@@ -32,7 +35,7 @@ function SearchCard({ client, clients }) {
   };
 
   const EditClient = () => {
-    return client.name;
+    setIsEditing(true);
   };
   return (
     <div className="container">
@@ -52,6 +55,7 @@ function SearchCard({ client, clients }) {
         <button onClick={DeleteClient}>Delete </button>{" "}
         <button onClick={EditClient}>Edit </button>
       </div>
+      {isEditing && <EditForm client={client} clients={clients} />}
     </div>
   );
 }

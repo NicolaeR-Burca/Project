@@ -3,6 +3,8 @@ export default function validateInfo(values) {
 
   if (!values.LastName.trim()) {
     errors.LastName = "AAAAAAAAAAAAAAAAAAAAAAAAAAAa";
+  } else if (values.LastName.length < 10) {
+    errors.LastName = "Too short";
   }
   //FirstName
   if (!values.FirstName.trim()) {
