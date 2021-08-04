@@ -20,7 +20,6 @@ const FormSignup = ({ submitForm }) => {
             type="text"
             name="FirstName"
             className="form-input"
-            placeholder="Enter your First Name"
             value={values.FirstName}
             onChange={handleChange}
           />
@@ -33,7 +32,6 @@ const FormSignup = ({ submitForm }) => {
             type="text"
             name="LastName"
             className="form-input"
-            placeholder="Enter your Last Name"
             value={values.LastName}
             onChange={handleChange}
           />
@@ -46,7 +44,6 @@ const FormSignup = ({ submitForm }) => {
             type="text"
             name="StreetName"
             className="form-input"
-            placeholder="Enter your Street Name"
             value={values.StreetName}
             onChange={handleChange}
           />
@@ -60,7 +57,6 @@ const FormSignup = ({ submitForm }) => {
             type="text"
             name="StreetNo"
             className="form-input"
-            placeholder="Enter your Street number"
             value={values.StreetNo}
             onChange={handleChange}
           />
@@ -74,7 +70,6 @@ const FormSignup = ({ submitForm }) => {
             type="text"
             name="city"
             className="form-input"
-            placeholder="Enter your city"
             value={values.city}
             onChange={handleChange}
           />
@@ -88,7 +83,6 @@ const FormSignup = ({ submitForm }) => {
             type="text"
             name="state"
             className="form-input"
-            placeholder="Enter your state"
             value={values.state}
             onChange={handleChange}
           />
@@ -102,7 +96,6 @@ const FormSignup = ({ submitForm }) => {
             type="text"
             name="PhoneNumber"
             className="form-input"
-            placeholder="Enter your Phone Number"
             value={values.PhoneNumber}
             onChange={handleChange}
           />
@@ -116,7 +109,6 @@ const FormSignup = ({ submitForm }) => {
             type="text"
             name="SocialSecurityNumber"
             className="form-input"
-            placeholder="Enter your Social Security Number"
             value={values.SocialSecurityNumber}
             onChange={handleChange}
           />
@@ -130,7 +122,6 @@ const FormSignup = ({ submitForm }) => {
             type="text"
             name="Licenceplate"
             className="form-input"
-            placeholder="Enter your Licence-plate"
             value={values.Licenceplate}
             onChange={handleChange}
           />

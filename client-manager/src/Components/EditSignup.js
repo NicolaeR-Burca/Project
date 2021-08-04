@@ -13,7 +13,7 @@ const FormSignup = ({ submitForm, client, clients }) => {
 
   return (
     <div className="form-content-right">
-      <form onSubmit={handleSubmit} className="form" noValidate>
+      <form onSubmit={handleSubmit} className="form-edit" noValidate>
         <h1>Fill the following form to edit this client </h1>
         <div className="form-inputs">
           <label className="form-label">First Name</label>
@@ -22,7 +22,6 @@ const FormSignup = ({ submitForm, client, clients }) => {
             type="text"
             name="FirstName"
             className="form-input"
-            placeholder="Enter your First Name"
             value={values.FirstName}
             onChange={handleChange}
           />
@@ -35,7 +34,6 @@ const FormSignup = ({ submitForm, client, clients }) => {
             type="text"
             name="LastName"
             className="form-input"
-            placeholder="Enter your Last Name"
             value={values.LastName}
             onChange={handleChange}
           />
@@ -48,7 +46,6 @@ const FormSignup = ({ submitForm, client, clients }) => {
             type="text"
             name="StreetName"
             className="form-input"
-            placeholder="Enter your Street Name"
             value={values.StreetName}
             onChange={handleChange}
           />
@@ -62,7 +59,6 @@ const FormSignup = ({ submitForm, client, clients }) => {
             type="text"
             name="StreetNo"
             className="form-input"
-            placeholder="Enter your Street number"
             value={values.StreetNo}
             onChange={handleChange}
           />
@@ -76,7 +72,6 @@ const FormSignup = ({ submitForm, client, clients }) => {
             type="text"
             name="city"
             className="form-input"
-            placeholder="Enter your city"
             value={values.city}
             onChange={handleChange}
           />
@@ -90,7 +85,6 @@ const FormSignup = ({ submitForm, client, clients }) => {
             type="text"
             name="state"
             className="form-input"
-            placeholder="Enter your state"
             value={values.state}
             onChange={handleChange}
           />
@@ -104,7 +98,6 @@ const FormSignup = ({ submitForm, client, clients }) => {
             type="text"
             name="PhoneNumber"
             className="form-input"
-            placeholder="Enter your Phone Number"
             value={values.PhoneNumber}
             onChange={handleChange}
           />
@@ -118,7 +111,6 @@ const FormSignup = ({ submitForm, client, clients }) => {
             type="text"
             name="SocialSecurityNumber"
             className="form-input"
-            placeholder="Enter your Social Security Number"
             value={values.SocialSecurityNumber}
             onChange={handleChange}
           />
@@ -132,7 +124,6 @@ const FormSignup = ({ submitForm, client, clients }) => {
             type="text"
             name="Licenceplate"
             className="form-input"
-            placeholder="Enter your Licence-plate"
             value={values.Licenceplate}
             onChange={handleChange}
           />
