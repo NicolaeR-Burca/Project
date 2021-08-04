@@ -50,7 +50,7 @@ const useForm = (callback, validate, client, clients) => {
   const DeleteClient = () => {
     for (let person of clients) {
       if (person.cnp === client.cnp) {
-        let deleted = Firebase.firestore()
+        Firebase.firestore()
           .collection("users")
           .doc(person.id)
           .delete()
