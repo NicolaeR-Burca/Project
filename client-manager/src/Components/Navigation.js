@@ -27,7 +27,6 @@ const Navigation = () => {
 
   if (!isLoading) {
     console.log(clients);
-    console.log(clients[0].cnp);
   }
 
   return (

@@ -1,11 +1,10 @@
-import React from 'react';
-
+import Chart from "./Chart";
 
 export default function Statistics() {
-    return (
-        <div >
-            <h1>Testing Statistics</h1>
-        </div>
-    )
-
+  return (
+    <div className="container">
+      <h1 className="header">Your Statistics</h1>
+      <Chart legendPosition="bottom" />
+    </div>
+  );
 }
