@@ -4,22 +4,6 @@ import Firebase from "./Firebase";
 import { useState, useEffect } from "react";
 
 const BarChart = () => {
-  // let stats = {};
-  // var docRef = Firebase.firestore().collection("statistics").doc("numbers");
-  // docRef
-  //   .get()
-  //   .then((doc) => {
-  //     if (doc.exists) {
-  //       stats = JSON.parse(JSON.stringify(doc.data()));
-  //     } else {
-  //       // doc.data() will be undefined in this case
-  //       console.log("No such document!");
-  //     }
-  //   })
-  //   .catch((error) => {
-  //     console.log("Error getting document:", error);
-  //   });
-  // console.log(stats);
   const [stats, setStats] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -76,16 +60,32 @@ const BarChart = () => {
         options={{
           maintainAspectRatio: false,
           scales: {
-            yAxes: [
-              {
-                ticks: {
-                  beginAtZero: true,
+            y: {
+              ticks: {
+                beginAtZero: true,
+                font: {
+                  family: "monospace",
+                  size: 30,
                 },
               },
-            ],
+            },
+
+            x: {
+              ticks: {
+                font: {
+                  family: "monospace", // Your font family
+                  size: 30,
+                },
+              },
+            },
           },
           legend: {
-            labels: {},
+            labels: {
+              font: {
+                family: "monospace", // Your font family
+                size: 30,
+              },
+            },
           },
         }}
       />
