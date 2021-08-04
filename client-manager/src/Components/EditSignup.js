@@ -1,6 +1,7 @@
 import React from "react";
 import validate from "./validateInfo";
 import useEdit from "./useEdit";
+import "./Form.css";
 
 const FormSignup = ({ submitForm, client, clients }) => {
   const { handleChange, handleSubmit, values, errors } = useEdit(
@@ -139,7 +140,7 @@ const FormSignup = ({ submitForm, client, clients }) => {
         </div>
 
         <button className="form-input-btn" type="submit">
-          submit
+          Save Changes
         </button>
         <span className="form-input-login"></span>
       </form>

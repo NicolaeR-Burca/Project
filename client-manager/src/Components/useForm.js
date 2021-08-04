@@ -39,6 +39,14 @@ const useForm = (callback, validate) => {
     setErrors(validate(values));
     setIsSubmitting(true);
   };
+  // function userCount() {
+  //   return Firebase.firestore()
+  //     .collection("users")
+  //     .get()
+  //     .then(function (querySnapshot) {
+  //       return querySnapshot.size;
+  //     });
+  // }
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {

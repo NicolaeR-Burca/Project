@@ -27,13 +27,14 @@ const Navigation = () => {
 
   if (!isLoading) {
     console.log(clients);
+    console.log(clients[0].cnp);
   }
 
   return (
     <Router>
       <div>
         <Navbar bg="dark" variant={"dark"} expand="lg" sticky="top">
-          <Navbar.Brand>My Client Manager</Navbar.Brand>
+          <Navbar.Brand> My Client Manager</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">

@@ -35,7 +35,8 @@ function SearchCard({ client, clients }) {
   };
 
   const EditClient = () => {
-    setIsEditing(true);
+    if (isEditing === false) setIsEditing(true);
+    else setIsEditing(false);
   };
   return (
     <div className="container">
@@ -52,8 +53,12 @@ function SearchCard({ client, clients }) {
         <p>Social Security Number: {client.cnp}</p>
         <p>Phone: {client.phone}</p>
         <p>License Plate: {client.car_number}</p>
-        <button onClick={DeleteClient}>Delete </button>{" "}
-        <button onClick={EditClient}>Edit </button>
+        <button className="utilityButton" onClick={DeleteClient}>
+          Delete{" "}
+        </button>{" "}
+        <button className="utilityButton" onClick={EditClient}>
+          Edit{" "}
+        </button>
       </div>
       {isEditing && <EditForm client={client} clients={clients} />}
     </div>

@@ -5,6 +5,7 @@
     rgb(39, 176, 255) 0%,
     rgb(0, 232, 236) 100%
   );
+  font-family: monospace;
 }
 
 .App-header {
@@ -16,6 +17,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: monospace;
 }
 
 .App-link {

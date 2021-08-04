@@ -53,6 +53,7 @@ function Search({ clients, isLoading }) {
       <div>
         <h1>Search your clients</h1>
         <input
+          className="search-bar"
           type="search"
           placeholder="Search clients"
           onChange={handleChange}

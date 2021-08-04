@@ -19,7 +19,7 @@ const Form = ({ client, clients }) => {
             clients={clients}
           />
         ) : (
-          <EditForm />
+          <EditForm clients={clients} client={client} />
         )}
       </div>
     </>
