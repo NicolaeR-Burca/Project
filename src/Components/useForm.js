@@ -74,7 +74,7 @@ const useForm = (callback, validate) => {
   const DeleteFirstClient = () => {
     console.log("in delete");
 
-    if (userCount > 9) {
+    if (userCount > 10) {
       console.log(firstClient.id);
       Firebase.firestore()
         .collection("users")
