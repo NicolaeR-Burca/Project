@@ -25,9 +25,9 @@ const Navigation = () => {
     FetchClients();
   }, []);
 
-  if (!isLoading) {
-    console.log(clients);
-  }
+  // if (!isLoading) {
+  //   console.log(clients);
+  // }
 
   return (
     <Router>
