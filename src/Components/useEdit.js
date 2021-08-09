@@ -2,15 +2,15 @@ import { useState, useEffect } from "react";
 import Firebase from "./Firebase";
 const useForm = (callback, validate, client, clients) => {
   const [values, setValues] = useState({
-    LastName: "",
-    FirstName: "",
-    StreetName: "",
-    StreetNo: "",
-    city: "",
-    state: "",
-    PhoneNumber: "",
-    SocialSecurityNumber: "",
-    Licenceplate: "",
+    LastName: client.last_name,
+    FirstName: client.first_name,
+    StreetName: client.street,
+    StreetNo: client.street_number,
+    city: client.city,
+    state: client.state,
+    PhoneNumber: client.phone,
+    SocialSecurityNumber: client.cnp,
+    Licenceplate: client.car_number,
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
