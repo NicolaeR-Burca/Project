@@ -74,7 +74,7 @@ const useForm = (callback, validate) => {
   const DeleteFirstClient = () => {
     console.log("in delete");
 
-    if (userCount > 10) {
+    if (userCount > 9) {
       console.log(firstClient.id);
       Firebase.firestore()
         .collection("users")
@@ -97,7 +97,7 @@ const useForm = (callback, validate) => {
     sorted.get().then((documentSnapshots) => {
       // Get the last visible document
       var firstVisible = documentSnapshots.docs[0];
-      var count = documentSnapshots.docs.length;
+      var count = documentSnapshots.docs.length + 1;
       setUserCount(count);
       setFirstClient(firstVisible);
       console.log("first : ", firstVisible);
