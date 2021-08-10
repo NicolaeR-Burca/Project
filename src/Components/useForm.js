@@ -97,7 +97,7 @@ const useForm = (callback, validate) => {
     sorted.get().then((documentSnapshots) => {
       // Get the last visible document
       var firstVisible = documentSnapshots.docs[0];
-      var count = documentSnapshots.docs.length + 1;
+      var count = documentSnapshots.docs.length;
       setUserCount(count);
       setFirstClient(firstVisible);
       console.log("first : ", firstVisible);
