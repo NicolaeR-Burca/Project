@@ -2,17 +2,31 @@ import React from "react";
 import validate from "./validateInfo";
 import useForm from "./useForm";
 import "./Form.css";
+import LinearWithValueLabel from "./Progress";
 
 const FormSignup = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(
     submitForm,
     validate
   );
+  const [progress, setProgress] = React.useState(0);
+  const [visited, setVisited] = React.useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
 
   return (
     <div className="form-content-right">
       <form onSubmit={handleSubmit} className="form" noValidate>
         <h1>Fill the following form to add a new client </h1>
+        <LinearWithValueLabel progress={progress < 99 ? progress : 100} />
         <div className="form-inputs">
           <label className="form-label">First Name</label>
           <input
@@ -22,6 +36,15 @@ const FormSignup = ({ submitForm }) => {
             className="form-input"
             value={values.FirstName}
             onChange={handleChange}
+            onBlur={(e) => {
+              if (e.target.value && !visited[0]) {
+                setProgress(progress + 11.11);
+                visited[0] = true;
+              } else if (visited[0] && e.target.value === "") {
+                setProgress(progress - 11.11);
+                visited[0] = false;
+              }
+            }}
           />
           {errors.FirstName && <p>{errors.FirstName}</p>}
         </div>
@@ -34,6 +57,15 @@ const FormSignup = ({ submitForm }) => {
             className="form-input"
             value={values.LastName}
             onChange={handleChange}
+            onBlur={(e) => {
+              if (e.target.value && !visited[1]) {
+                setProgress(progress + 11.11);
+                visited[1] = true;
+              } else if (visited[1] && e.target.value === "") {
+                setProgress(progress - 11.11);
+                visited[1] = false;
+              }
+            }}
           />
           {errors.LastName && <p>{errors.LastName}</p>}
         </div>
@@ -46,6 +78,15 @@ const FormSignup = ({ submitForm }) => {
             className="form-input"
             value={values.StreetName}
             onChange={handleChange}
+            onBlur={(e) => {
+              if (e.target.value && !visited[2]) {
+                setProgress(progress + 11.11);
+                visited[2] = true;
+              } else if (visited[2] && e.target.value === "") {
+                setProgress(progress - 11.11);
+                visited[2] = false;
+              }
+            }}
           />
           {errors.StreetName && <p>{errors.StreetName}</p>}
         </div>
@@ -59,6 +100,15 @@ const FormSignup = ({ submitForm }) => {
             className="form-input"
             value={values.StreetNo}
             onChange={handleChange}
+            onBlur={(e) => {
+              if (e.target.value && !visited[3]) {
+                setProgress(progress + 11.11);
+                visited[3] = true;
+              } else if (visited[3] && e.target.value === "") {
+                setProgress(progress - 11.11);
+                visited[3] = false;
+              }
+            }}
           />
           {errors.StreetNo && <p>{errors.StreetNo}</p>}
         </div>
@@ -72,6 +122,15 @@ const FormSignup = ({ submitForm }) => {
             className="form-input"
             value={values.city}
             onChange={handleChange}
+            onBlur={(e) => {
+              if (e.target.value && !visited[4]) {
+                setProgress(progress + 11.11);
+                visited[4] = true;
+              } else if (visited[4] && e.target.value === "") {
+                setProgress(progress - 11.11);
+                visited[4] = false;
+              }
+            }}
           />
           {errors.city && <p>{errors.city}</p>}
         </div>
@@ -85,6 +144,15 @@ const FormSignup = ({ submitForm }) => {
             className="form-input"
             value={values.state}
             onChange={handleChange}
+            onBlur={(e) => {
+              if (e.target.value && !visited[5]) {
+                setProgress(progress + 11.11);
+                visited[5] = true;
+              } else if (visited[5] && e.target.value === "") {
+                setProgress(progress - 11.11);
+                visited[5] = false;
+              }
+            }}
           />
           {errors.state && <p>{errors.state}</p>}
         </div>
@@ -98,6 +166,15 @@ const FormSignup = ({ submitForm }) => {
             className="form-input"
             value={values.PhoneNumber}
             onChange={handleChange}
+            onBlur={(e) => {
+              if (e.target.value && !visited[6]) {
+                setProgress(progress + 11.11);
+                visited[6] = true;
+              } else if (visited[6] && e.target.value === "") {
+                setProgress(progress - 11.11);
+                visited[6] = false;
+              }
+            }}
           />
           {errors.PhoneNumber && <p>{errors.PhoneNumber}</p>}
         </div>
@@ -111,6 +188,15 @@ const FormSignup = ({ submitForm }) => {
             className="form-input"
             value={values.SocialSecurityNumber}
             onChange={handleChange}
+            onBlur={(e) => {
+              if (e.target.value && !visited[7]) {
+                setProgress(progress + 11.11);
+                visited[7] = true;
+              } else if (visited[7] && e.target.value === "") {
+                setProgress(progress - 11.11);
+                visited[7] = false;
+              }
+            }}
           />
           {errors.SocialSecurityNumber && <p>{errors.SocialSecurityNumber}</p>}
         </div>
@@ -124,6 +210,15 @@ const FormSignup = ({ submitForm }) => {
             className="form-input"
             value={values.Licenceplate}
             onChange={handleChange}
+            onBlur={(e) => {
+              if (e.target.value && !visited[8]) {
+                setProgress(progress + 11.11);
+                visited[8] = true;
+              } else if (visited[8] && e.target.value === "") {
+                setProgress(progress - 11.11);
+                visited[8] = false;
+              }
+            }}
           />
           {errors.Licenceplate && <p>{errors.Licenceplate}</p>}
         </div>
