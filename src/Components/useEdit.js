@@ -93,6 +93,7 @@ const useForm = (callback, validate, client, clients) => {
       newClient.phone = values.PhoneNumber;
       newClient.street = values.StreetName;
       newClient.street_number = values.StreetNo;
+      newClient.timestamp = client.timestamp;
       EditNrTransaction(countDifferences(newClient));
       DeleteClient();
       Firebase.firestore()
