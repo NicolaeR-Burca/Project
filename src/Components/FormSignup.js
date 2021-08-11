@@ -3,6 +3,7 @@ import validate from "./validateInfo";
 import useForm from "./useForm";
 import "./Form.css";
 import LinearWithValueLabel from "./Progress";
+import { rtvalidation as v } from "./rtValidateInfo";
 
 const FormSignup = ({ submitForm }) => {
   const { handleChange, handleSubmit, values, errors } = useForm(
@@ -21,6 +22,63 @@ const FormSignup = ({ submitForm }) => {
     false,
     false,
   ]);
+
+  const [lastName, setLastName] = React.useState("");
+  const [firstName, setFirstName] = React.useState("");
+  const [city, setCity] = React.useState("");
+  const [state, setState] = React.useState("");
+  const [streetName, setStreetName] = React.useState("");
+  const [streetNumber, setStreetNumber] = React.useState("");
+  const [phone, setPhone] = React.useState("");
+  const [ssn, setSSN] = React.useState("");
+  const [licensePlate, setLicensePlate] = React.useState("");
+  const [rtErrors, setRTErrors] = React.useState({});
+
+  // LastName: "",
+  //   FirstName: "",
+  //   StreetName: "",
+  //   StreetNo: "",
+  //   city: "",
+  //   state: "",
+  //   PhoneNumber: "",
+  //   SocialSecurityNumber: "",
+  //   Licenceplate: "",
+
+  React.useEffect(() => {
+    if (values.LastName) {
+      setLastName(values.LastName);
+    } else setLastName("");
+
+    if (values.FirstName) {
+      setFirstName(values.FirstName);
+    } else setFirstName("");
+
+    if (values.StreetName) {
+      setStreetName(values.StreetName);
+    } else setStreetName("");
+
+    if (values.StreetNo) {
+      setStreetNumber(values.StreetNo);
+    } else setStreetNumber("");
+
+    if (values.city) {
+      setCity(values.city);
+    } else setCity("");
+
+    if (values.state) {
+      setState(values.state);
+    } else setState("");
+
+    if (values.PhoneNumber) {
+      setPhone(values.PhoneNumber);
+    } else setPhone("");
+    if (values.SocialSecurityNumber) {
+      setSSN(values.SocialSecurityNumber);
+    } else setSSN("");
+    if (values.Licenceplate) {
+      setLicensePlate(values.Licenceplate);
+    } else setLicensePlate("");
+  }, [values]);
 
   return (
     <div className="form-content-right">
@@ -44,9 +102,13 @@ const FormSignup = ({ submitForm }) => {
                 setProgress(progress - 11.11);
                 visited[0] = false;
               }
+              setRTErrors({
+                ...rtErrors,
+                firstName: v.CheckFirstName(firstName),
+              });
             }}
           />
-          {errors.FirstName && <p>{errors.FirstName}</p>}
+          {rtErrors && rtErrors.firstName && <p>{rtErrors.firstName}</p>}
         </div>
         <div className="form-inputs">
           <label className="form-label">Last Name</label>
@@ -65,9 +127,13 @@ const FormSignup = ({ submitForm }) => {
                 setProgress(progress - 11.11);
                 visited[1] = false;
               }
+              setRTErrors({
+                ...rtErrors,
+                lastName: v.CheckLastName(lastName),
+              });
             }}
           />
-          {errors.LastName && <p>{errors.LastName}</p>}
+          {rtErrors && rtErrors.lastName && <p>{rtErrors.lastName}</p>}
         </div>
         <div className="form-inputs">
           <label className="form-label">Street Name</label>
@@ -86,9 +152,13 @@ const FormSignup = ({ submitForm }) => {
                 setProgress(progress - 11.11);
                 visited[2] = false;
               }
+              setRTErrors({
+                ...rtErrors,
+                streetName: v.CheckStreetName(streetName),
+              });
             }}
           />
-          {errors.StreetName && <p>{errors.StreetName}</p>}
+          {rtErrors && rtErrors.streetName && <p>{rtErrors.streetName}</p>}
         </div>
 
         <div className="form-inputs">
@@ -108,9 +178,13 @@ const FormSignup = ({ submitForm }) => {
                 setProgress(progress - 11.11);
                 visited[3] = false;
               }
+              setRTErrors({
+                ...rtErrors,
+                streetNumber: v.CheckStreetNumber(streetNumber),
+              });
             }}
           />
-          {errors.StreetNo && <p>{errors.StreetNo}</p>}
+          {rtErrors && rtErrors.streetNumber && <p>{rtErrors.streetNumber}</p>}
         </div>
 
         <div className="form-inputs">
@@ -130,9 +204,13 @@ const FormSignup = ({ submitForm }) => {
                 setProgress(progress - 11.11);
                 visited[4] = false;
               }
+              setRTErrors({
+                ...rtErrors,
+                city: v.CheckCity(city),
+              });
             }}
           />
-          {errors.city && <p>{errors.city}</p>}
+          {rtErrors && rtErrors.city && <p>{rtErrors.city}</p>}
         </div>
 
         <div className="form-inputs">
@@ -152,9 +230,13 @@ const FormSignup = ({ submitForm }) => {
                 setProgress(progress - 11.11);
                 visited[5] = false;
               }
+              setRTErrors({
+                ...rtErrors,
+                state: v.CheckState(state),
+              });
             }}
           />
-          {errors.state && <p>{errors.state}</p>}
+          {rtErrors && rtErrors.state && <p>{rtErrors.state}</p>}
         </div>
 
         <div className="form-inputs">
@@ -174,9 +256,13 @@ const FormSignup = ({ submitForm }) => {
                 setProgress(progress - 11.11);
                 visited[6] = false;
               }
+              setRTErrors({
+                ...rtErrors,
+                phone: v.CheckPhone(phone),
+              });
             }}
           />
-          {errors.PhoneNumber && <p>{errors.PhoneNumber}</p>}
+          {rtErrors && rtErrors.phone && <p>{rtErrors.phone}</p>}
         </div>
 
         <div className="form-inputs">
@@ -196,9 +282,13 @@ const FormSignup = ({ submitForm }) => {
                 setProgress(progress - 11.11);
                 visited[7] = false;
               }
+              setRTErrors({
+                ...rtErrors,
+                ssn: v.CheckSSN(ssn),
+              });
             }}
           />
-          {errors.SocialSecurityNumber && <p>{errors.SocialSecurityNumber}</p>}
+          {rtErrors && rtErrors.ssn && <p>{rtErrors.ssn}</p>}
         </div>
 
         <div className="form-inputs">
@@ -218,9 +308,13 @@ const FormSignup = ({ submitForm }) => {
                 setProgress(progress - 11.11);
                 visited[8] = false;
               }
+              setRTErrors({
+                ...rtErrors,
+                licensePlate: v.CheckLicensePlate(licensePlate),
+              });
             }}
           />
-          {errors.Licenceplate && <p>{errors.Licenceplate}</p>}
+          {rtErrors && rtErrors.licensePlate && <p>{rtErrors.licensePlate}</p>}
         </div>
 
         <button className="form-input-btn" type="submit">
