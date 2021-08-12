@@ -3,7 +3,7 @@ export default function validateInfo(values) {
 
   if (!values.LastName.trim()) {
     errors.LastName = "Last name required";
-  } else if (!/^[a-zA-Z]+$/i.test(values.LastName)) {
+  } else if (!/^[a-zA-Z -]+$/i.test(values.LastName)) {
     errors.LastName = "Please insert only letters";
   } else if (values.LastName.length > 20) {
     errors.LastName = "Too many letters";
@@ -14,9 +14,7 @@ export default function validateInfo(values) {
   //FirstName
   if (!values.FirstName.trim()) {
     errors.FirstName = "FirstName required";
-  } else if (
-    !/^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z])$/i.test(values.FirstName)
-  ) {
+  } else if (!/^[a-z ,.'-]+$/i.test(values.FirstName)) {
     errors.FirstName = "Please insert a valid name";
   } else if (values.FirstName.length > 25) {
     errors.FirstName = "Too many letters";
@@ -26,9 +24,9 @@ export default function validateInfo(values) {
 
   if (!values.city.trim()) {
     errors.city = "City required";
-  } else if (!/^[a-zA-Z]+$/i.test(values.city)) {
+  } else if (!/^[a-zA-Z -]+$/i.test(values.city)) {
     errors.city = "Please insert only letters";
-  } else if (values.city.length > 10) {
+  } else if (values.city.length > 25) {
     errors.city = "Too many letters";
   } else if (values.city.length < 2) {
     errors.city = "Too few letters";
@@ -36,9 +34,9 @@ export default function validateInfo(values) {
 
   if (!values.state.trim()) {
     errors.state = "State required";
-  } else if (!/^[a-zA-Z]+$/i.test(values.state)) {
+  } else if (!/^[a-zA-Z -]+$/i.test(values.state)) {
     errors.state = "This is not a valid State name";
-  } else if (values.state.length > 10) {
+  } else if (values.state.length > 25) {
     errors.state = "Too many letters";
   } else if (values.state.length < 2) {
     errors.state = "Too few letters";
@@ -48,7 +46,7 @@ export default function validateInfo(values) {
     errors.PhoneNumber = "PhoneNumber required";
   } else if (!/^[0-9]+$/i.test(values.PhoneNumber)) {
     errors.PhoneNumber = "Please insert only numbers";
-  } else if (values.PhoneNumber.length > 13) {
+  } else if (values.PhoneNumber.length > 14) {
     errors.PhoneNumber = "Too many numbers";
   } else if (values.PhoneNumber.length < 10) {
     errors.PhoneNumber = "Too few numbers";
@@ -58,7 +56,7 @@ export default function validateInfo(values) {
     errors.SocialSecurityNumber = "SocialSecurityNumber required";
   } else if (!/^[0-9]+$/i.test(values.SocialSecurityNumber)) {
     errors.SocialSecurityNumber = "Please insert only numbers";
-  } else if (values.SocialSecurityNumber.length > 16) {
+  } else if (values.SocialSecurityNumber.length > 14) {
     errors.SocialSecurityNumber = "Too many numberns";
   } else if (values.SocialSecurityNumber.length < 12) {
     errors.SocialSecurityNumber = "Too few numbers";
@@ -66,10 +64,10 @@ export default function validateInfo(values) {
 
   if (
     values.StreetName.length !== 0 &&
-    !/^[A-Za-z.-]+$/i.test(values.StreetName)
+    !/^[A-Za-z .-]+$/i.test(values.StreetName)
   ) {
     errors.StreetName = "Invalid Street Name";
-  } else if (values.StreetName.length !== 0 && values.StreetName.length > 16) {
+  } else if (values.StreetName.length !== 0 && values.StreetName.length > 25) {
     errors.StreetName = "Too many letters";
   } else if (values.StreetName.length !== 0 && values.StreetName.length < 2) {
     errors.StreetName = "Too few letters";
@@ -77,14 +75,16 @@ export default function validateInfo(values) {
 
   if (
     values.StreetNo.length !== 0 &&
-    !/^[A-Za-z0-9]+$/i.test(values.StreetNo)
+    !/^[A-Za-z0-9 .-]+$/i.test(values.StreetNo)
   ) {
     errors.StreetNo = "Invalid Street No";
+  } else if (values.StreetNo.length !== 0 && values.StreetNo.length > 4) {
+    errors.StreetNo = "Invalid street number";
   }
 
   if (
     values.Licenceplate.length !== 0 &&
-    !/^[A-Za-z0-9]+$/i.test(values.Licenceplate)
+    !/^[A-Za-z0-9 -]+$/i.test(values.Licenceplate)
   ) {
     errors.Licenceplate = "Invalid License-plate";
   } else if (
