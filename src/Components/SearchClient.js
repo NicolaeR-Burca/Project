@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Search.css";
 import Scroll from "./Scroll";
 import SearchCard from "./SearchCard";
+import Particles from "react-particles-js";
 
 function Search({ clients, isLoading }) {
   const [searchField, setSearchField] = useState("");
@@ -26,6 +27,18 @@ function Search({ clients, isLoading }) {
     );
   });
 
+  const particlesOptions = {
+    particles: {
+      number: {
+        value: 40,
+        density: {
+          enable: true,
+          value_area: 800,
+        },
+      },
+    },
+  };
+
   const handleChange = (e) => {
     setSearchField(e.target.value);
   };
@@ -38,15 +51,18 @@ function Search({ clients, isLoading }) {
       return <h3>No results found for your search</h3>;
     else
       return (
-        <Scroll>
-          <ul>
-            {filteredClients.map((client) => (
-              <div key={client.id}>
-                <SearchCard client={client} clients={clients} />
-              </div>
-            ))}
-          </ul>
-        </Scroll>
+        <div>
+          <Particles className="particles" params={particlesOptions} />
+          <Scroll>
+            <ul>
+              {filteredClients.map((client) => (
+                <div key={client.id}>
+                  <SearchCard client={client} clients={clients} />
+                </div>
+              ))}
+            </ul>
+          </Scroll>
+        </div>
       );
   }
   if (clients) console.log(clients);
