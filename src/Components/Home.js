@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "./Card";
-import Particles from "react-particles-js";
 
 export default function Home({ clients, isLoading }) {
   return (
