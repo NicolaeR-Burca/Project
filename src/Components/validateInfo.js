@@ -63,8 +63,7 @@ export default function validateInfo(values) {
   }
 
   //StreetName
-  if (!values.values.StreetName.trim())
-    errors.StreetName = "Street Name required";
+  if (!values.StreetName.trim()) errors.StreetName = "Street Name required";
   else if (
     values.StreetName.length !== 0 &&
     !/^[A-Za-z .-]+$/i.test(values.StreetName)
