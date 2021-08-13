@@ -62,7 +62,10 @@ export default function validateInfo(values) {
     errors.SocialSecurityNumber = "Too few numbers";
   }
 
-  if (
+  //StreetName
+  if (!values.values.StreetName.trim())
+    errors.StreetName = "Street Name required";
+  else if (
     values.StreetName.length !== 0 &&
     !/^[A-Za-z .-]+$/i.test(values.StreetName)
   ) {
@@ -73,16 +76,22 @@ export default function validateInfo(values) {
     errors.StreetName = "Too few letters";
   }
 
-  if (
+  //StreetNumber
+  if (!values.StreetNo.trim()) {
+    errors.StreetNo = "Street Number required";
+  } else if (
     values.StreetNo.length !== 0 &&
     !/^[A-Za-z0-9 .-]+$/i.test(values.StreetNo)
   ) {
-    errors.StreetNo = "Invalid Street No";
+    errors.StreetNo = "Invalid Street Number";
   } else if (values.StreetNo.length !== 0 && values.StreetNo.length > 4) {
     errors.StreetNo = "Invalid street number";
   }
 
-  if (
+  //License Plate
+  if (!values.Licenceplate.trim()) {
+    errors.Licenceplate = "License-plate required";
+  } else if (
     values.Licenceplate.length !== 0 &&
     !/^[A-Za-z0-9 -]+$/i.test(values.Licenceplate)
   ) {

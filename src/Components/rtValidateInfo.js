@@ -72,7 +72,9 @@ export const rtvalidation = {
   },
 
   CheckStreetName: function (streetName) {
-    if (streetName.length !== 0 && !/^[A-Za-z .-]+$/i.test(streetName)) {
+    if (!streetName) {
+      return "Street Name required";
+    } else if (streetName.length !== 0 && !/^[A-Za-z .-]+$/i.test(streetName)) {
       return "Invalid Street Name";
     } else if (streetName !== 0 && streetName.length > 25) {
       return "Too many letters";
@@ -82,7 +84,12 @@ export const rtvalidation = {
   },
 
   CheckStreetNumber: function (streetNumber) {
-    if (streetNumber.length !== 0 && !/^[A-Za-z0-9 .-]+$/i.test(streetNumber)) {
+    if (!streetNumber) {
+      return "Street Number required";
+    } else if (
+      streetNumber.length !== 0 &&
+      !/^[A-Za-z0-9 .-]+$/i.test(streetNumber)
+    ) {
       return "Invalid Street No";
     } else if (streetNumber.length !== 0 && streetNumber.length > 4) {
       return "Invalid street number";
@@ -90,7 +97,12 @@ export const rtvalidation = {
   },
 
   CheckLicensePlate: function (licensePlate) {
-    if (licensePlate.length !== 0 && !/^[A-Za-z0-9 -]+$/i.test(licensePlate)) {
+    if (!licensePlate) {
+      return "License Plate required";
+    } else if (
+      licensePlate.length !== 0 &&
+      !/^[A-Za-z0-9 -]+$/i.test(licensePlate)
+    ) {
       return "Invalid License-plate";
     } else if (licensePlate.length !== 0 && licensePlate.length > 12) {
       return "Too many letters";
