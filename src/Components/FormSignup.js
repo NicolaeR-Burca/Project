@@ -84,7 +84,9 @@ const FormSignup = ({ submitForm }) => {
     <div className="form-content-right">
       <form onSubmit={handleSubmit} className="form" noValidate>
         <h1>Add New Client </h1>
-        <LinearWithValueLabel progress={progress < 99 ? progress : 100} />
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <LinearWithValueLabel progress={progress < 99 ? progress : 100} />
+        </div>
         <fieldset>
           <div className="form-inputs">
             <label className="form-label">First Name</label>
