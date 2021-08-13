@@ -1,21 +1,28 @@
-import React from 'react';
-import './Card.css';
+import React from "react";
+import "./Card.css";
 
 function Card({ client }) {
   return (
-
     <div className="container">
       <div className="card">
-        <h3>First name: {client.first_name} Last name: {client.last_name}</h3>
-        <p>State: {client.state} City: {client.city} </p>
-        <p>Street: {client.street} {client.street_number}</p>
+        <h4
+          style={{
+            "text-align": "center",
+            "font-weight": " bold",
+          }}
+        >
+          {client.first_name} {client.last_name}
+        </h4>
+        <p>State: {client.state} </p>
+        <p>City: {client.city} </p>
+        <p>
+          Street: {client.street} {client.street_number}
+        </p>
         <p>Social Security Number: {client.cnp}</p>
         <p>Phone: {client.phone}</p>
         <p>License Plate: {client.car_number}</p>
       </div>
     </div>
-
-
   );
 }
 

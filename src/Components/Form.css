@@ -9,7 +9,12 @@
   color: #333;
 }
 .form-edit {
-  background-image: linear-gradient(#89ecda, #b3ecec);
+  background: inherit;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  font-family: "Quicksand";
+  color: #333;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .form-input {
@@ -50,6 +55,7 @@ fieldset {
 }
 
 .form-input-btn {
+  margin-top: 30px;
   background: rgba(238, 174, 202, 1);
 }
 .form-content-right {

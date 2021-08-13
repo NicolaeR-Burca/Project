@@ -1,11 +1,12 @@
 .App {
   text-align: center;
-  background: linear-gradient(
-    90deg,
-    rgb(39, 176, 255) 0%,
-    rgb(0, 232, 236) 100%
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 207, 233, 1) 100%
   );
-  font-family: monospace;
+  font-family: "Quicksand";
+  color: #333;
 }
 
 .App-header {

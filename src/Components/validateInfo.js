@@ -13,7 +13,7 @@ export default function validateInfo(values) {
 
   //FirstName
   if (!values.FirstName.trim()) {
-    errors.FirstName = "FirstName required";
+    errors.FirstName = "First Name required";
   } else if (!/^[a-z ,.'-]+$/i.test(values.FirstName)) {
     errors.FirstName = "Please insert a valid name";
   } else if (values.FirstName.length > 25) {

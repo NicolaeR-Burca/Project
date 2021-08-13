@@ -332,7 +332,7 @@ const FormSignup = ({ submitForm }) => {
           </div>
 
           <button className="form-input-btn" type="submit">
-            submit
+            Add Client
           </button>
         </fieldset>
         <span className="form-input-login"></span>
