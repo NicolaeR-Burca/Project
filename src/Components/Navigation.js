@@ -13,14 +13,17 @@ const Navigation = () => {
   useEffect(() => {
     const FetchClients = async () => {
       const db = Firebase.firestore();
-      await db.collection("users").onSnapshot((snapshot) => {
-        const newClients = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setClients(newClients);
-        setIsLoading(false);
-      });
+      await db
+        .collection("users")
+        .orderBy("timestamp", "desc")
+        .onSnapshot((snapshot) => {
+          const newClients = snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          setClients(newClients);
+          setIsLoading(false);
+        });
     };
     FetchClients();
   }, []);
