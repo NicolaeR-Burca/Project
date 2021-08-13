@@ -1,6 +1,12 @@
 .form {
-  background-image: linear-gradient(#89ecda, #b3ecec);
-  height: 100vh;
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 207, 233, 1) 100%
+  );
+  height: 150vh;
+  font-family: "Quicksand";
+  color: #333;
 }
 .form-edit {
   background-image: linear-gradient(#89ecda, #b3ecec);
@@ -11,6 +17,11 @@
   margin-left: 5px;
   width: 230 px;
 }
+
+.form-inputs input {
+  width: 250px;
+}
+
 .form-input-btn {
   border-radius: 5px;
   background-color: #27b0ff;
@@ -21,4 +32,36 @@
   display: inline-block;
   font-size: 16px;
   margin-bottom: 5px;
+}
+.form-content-right p {
+  color: red;
+}
+
+fieldset {
+  background-color: white;
+  margin: 8px;
+  border: 1px solid silver;
+  padding: 8px;
+  border-radius: 7px;
+  display: inline-block;
+  padding-left: 22px;
+  padding-right: 22px;
+  border: 1px solid white;
+}
+
+.form-input-btn {
+  background: rgba(238, 174, 202, 1);
+}
+.form-content-right {
+  margin: 0 auto;
+  text-align: center;
+}
+.form-content-right label {
+  text-align: left;
+  display: block;
+}
+.form-content-right h1 {
+  font-family: "Quicksand";
+  color: #333;
+  font-weight: lighter;
 }
