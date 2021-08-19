@@ -91,7 +91,7 @@ export const rtvalidation = {
       !/^[A-Za-z0-9 .-]+$/i.test(streetNumber)
     ) {
       return "Invalid Street No";
-    } else if (streetNumber.length !== 0 && streetNumber.length > 4) {
+    } else if (streetNumber.length !== 0 && streetNumber.length > 7) {
       return "Invalid street number";
     } else return "";
   },
