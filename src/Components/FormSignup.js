@@ -113,6 +113,7 @@ const FormSignup = ({ submitForm }) => {
               }}
             />
             {rtErrors && rtErrors.firstName && <p>{rtErrors.firstName}</p>}
+            {errors.FirstName && <p>{errors.FirstName}</p>}
           </div>
           <div className="form-inputs">
             <label className="form-label">Last Name</label>
@@ -138,7 +139,9 @@ const FormSignup = ({ submitForm }) => {
                 });
               }}
             />
+
             {rtErrors && rtErrors.lastName && <p>{rtErrors.lastName}</p>}
+            {errors.LastName && <p>{errors.LastName}</p>}
           </div>
           <div className="form-inputs">
             <label className="form-label">Street Name</label>
@@ -165,6 +168,7 @@ const FormSignup = ({ submitForm }) => {
               }}
             />
             {rtErrors && rtErrors.streetName && <p>{rtErrors.streetName}</p>}
+            {errors.StreetName && <p>{errors.StreetName}</p>}
           </div>
 
           <div className="form-inputs">
@@ -194,6 +198,7 @@ const FormSignup = ({ submitForm }) => {
             {rtErrors && rtErrors.streetNumber && (
               <p>{rtErrors.streetNumber}</p>
             )}
+            {errors.StreetNo && <p>{errors.StreetNo}</p>}
           </div>
 
           <div className="form-inputs">
@@ -221,6 +226,7 @@ const FormSignup = ({ submitForm }) => {
               }}
             />
             {rtErrors && rtErrors.city && <p>{rtErrors.city}</p>}
+            {errors.city && <p>{errors.city}</p>}
           </div>
 
           <div className="form-inputs">
@@ -248,6 +254,7 @@ const FormSignup = ({ submitForm }) => {
               }}
             />
             {rtErrors && rtErrors.state && <p>{rtErrors.state}</p>}
+            {errors.state && <p>{errors.state}</p>}
           </div>
 
           <div className="form-inputs">
@@ -275,6 +282,7 @@ const FormSignup = ({ submitForm }) => {
               }}
             />
             {rtErrors && rtErrors.phone && <p>{rtErrors.phone}</p>}
+            {errors.PhoneNumber && <p>{errors.PhoneNumber}</p>}
           </div>
 
           <div className="form-inputs">
@@ -302,6 +310,9 @@ const FormSignup = ({ submitForm }) => {
               }}
             />
             {rtErrors && rtErrors.ssn && <p>{rtErrors.ssn}</p>}
+            {errors.SocialSecurityNumber && (
+              <p>{errors.SocialSecurityNumber}</p>
+            )}
           </div>
 
           <div className="form-inputs">
@@ -331,6 +342,7 @@ const FormSignup = ({ submitForm }) => {
             {rtErrors && rtErrors.licensePlate && (
               <p>{rtErrors.licensePlate}</p>
             )}
+            {errors.Licenceplate && <p>{errors.Licenceplate}</p>}
           </div>
 
           <button className="form-input-btn" type="submit">
