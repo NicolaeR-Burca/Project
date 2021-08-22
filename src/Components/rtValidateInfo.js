@@ -101,7 +101,7 @@ export const rtvalidation = {
       return "License Plate required";
     } else if (
       licensePlate.length !== 0 &&
-      !/^[A-Za-z0-9 -]+$/i.test(licensePlate)
+      !/^(?=.*?\d)(?=.*?[a-zA-Z])[a-zA-Z\d]+$/i.test(licensePlate)
     ) {
       return "Invalid License-plate";
     } else if (licensePlate.length !== 0 && licensePlate.length > 12) {
