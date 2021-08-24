@@ -65,7 +65,7 @@ export const rtvalidation = {
     } else if (!/^[0-9]+$/i.test(ssn)) {
       return "Please insert only numbers";
     } else if (ssn.length > 14) {
-      return "Too many numberns";
+      return "Too many numbers";
     } else if (ssn.length < 12) {
       return "Too few numbers";
     } else return "";
